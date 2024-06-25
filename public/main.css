@@ -1,0 +1,21 @@
+.blog-head{
+ font-weight: bolder;
+ font-size: 25px;
+
+}
+.back{
+ background-color: #03AED2;
+}
+
+.contact-form {
+ max-width: 500px;
+ margin: auto;
+}
+.myhead {
+    color: gray;
+}
+
+li{
+    color: black;
+}
+

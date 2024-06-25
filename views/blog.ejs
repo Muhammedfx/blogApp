@@ -1,0 +1,36 @@
+<!-- create-post.ejs -->
+  <%- include('partials/header.ejs') %>
+ <!--include footer-->
+    <div class="container mt-5">
+        <h1>Create a New Post</h1>
+      
+        <form action="/posts" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Post Title:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+             <label for="content" class="form-label">Content:</label>
+             <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" value="POST">Create Post</button>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <% posts.forEach(post => { %>
+            <div class="post card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title"><%= post.title %></h2>
+                    <p class="card-text"><%= post.content %></p>
+                    <a href="/edit/<%= post.id %>" class="btn btn-outline-primary">Edit</a>
+                    <form action="/delete/<%= post.id %>" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+
+ <!--including footer in our website-->
+ <%- include('partials/footer.ejs') %>
